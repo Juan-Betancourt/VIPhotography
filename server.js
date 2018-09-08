@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 const client = new pg.Client(process.env.DATABASE_URL);
 // client.connect();
 client.on('error', error => {
-  console.error(error);
+    console.error(error);
 });
 
 // PUBLIC FOLDER ACCESS
@@ -27,9 +27,9 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => {
     res.render('index');
 });
-// HELPER FUNCTIONS 
+// HELPER FUNCTIONS
 
 // LISTENER
 app.listen(PORT, () => {
     console.log(`Connected on port ${PORT}`);
-  });
+});
