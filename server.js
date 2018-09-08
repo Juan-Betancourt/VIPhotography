@@ -40,6 +40,7 @@ app.get('/adminpage', (req, res) => {
 app.post('/client', renderUserImg);
 
 // This function will be only adding images into for the user already exist in our database.
+app.get('/addimg', addImgPage);
 app.post('/addimg', postImg);
 
 // HELPER FUNCTIONS
@@ -62,6 +63,14 @@ function renderUserImg(req, res) {
       .catch(err => handleError(err, res));
   })
   .catch(err => handleError(err, res));
+}
+
+function addImgPage (req, res) {
+  client.query(`SELECT * FROM users`)
+  .then(results => {
+    console.log(results.rows);
+    res.render('./pages/addForm/addimg', {users: results.rows})
+  })
 }
 
 function postImg (req, res) {
