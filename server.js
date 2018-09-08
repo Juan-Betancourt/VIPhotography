@@ -24,9 +24,11 @@ client.on('error', error => {
 app.use(express.static('./public'));
 
 // ROUTES
-
 //This Path is a test path to display all the images for now. Possibly create a path just for the admin to see all the images in the database.
-app.get('/adminpage', (req, res) => {
+app.get('/', (req, res) => res.redirect('/adminpage')); // This is for testing purposes for now until we get this web-app done.
+app.get('/adminpage', adminAccess);
+
+function adminAccess (req, res) {
   client.query(`SELECT img_url FROM imgdatas`)
   .then(results =>{
       console.log(results.rows);
@@ -34,8 +36,7 @@ app.get('/adminpage', (req, res) => {
       // added the 2 tables into the database, This is to test if the stuffs were rendering correctly with the tables.
   })
   .catch(err => handleError(err, res));
-});
-
+}
 // This path need a show.ejs to show only user's images.
 app.post('/client', renderUserImg);
 
