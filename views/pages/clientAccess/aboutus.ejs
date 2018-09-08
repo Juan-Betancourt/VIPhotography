@@ -1,0 +1,32 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+
+<body>
+    <main>
+        <form id="addimg-form" action="/addimg" method="post">
+            <input id="img_url" type="text" name="img_url" placeholder="Enter your image URL path " required>
+            <% users.forEach((client) => { %>
+                <fieldset>
+                    <label for="client">
+                        <span>
+                            <%= client.lastname %> -
+                                <%= client.pin %>
+                        </span>
+                        <input type="radio" name="user_id" value="<%= client.user_id %>" required>
+                    </label>
+                </fieldset>
+                <% }); %>
+                    <button type="submit">Add into Database</button>
+        </form>
+    </main>
+</body>
+
+</html>
