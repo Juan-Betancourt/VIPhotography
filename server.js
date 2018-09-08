@@ -27,7 +27,16 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+app.get('/addimg', addImgPage);
+
 // HELPER FUNCTIONS
+function addImgPage(req, res) {
+    client.query(`SELECT * FROM users`)
+        .then(results => {
+            console.log(results.rows);
+            res.render('./pages/addForm/addimg', { users: results.rows })
+        })
+}
 
 // LISTENER
 app.listen(PORT, () => {
