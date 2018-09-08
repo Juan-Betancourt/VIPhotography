@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'ejs');
 const pg = require('pg');
+require('pg').defaults.ssl = true;
 const PORT = process.env.PORT;
 
 // DEPENDANCY SETTINGS
@@ -15,7 +16,7 @@ app.set('view engine', 'ejs');
 
 // DATABASE CLIENT
 const client = new pg.Client(process.env.DATABASE_URL);
-// client.connect();
+client.connect();
 client.on('error', error => {
   console.error(error);
 });
@@ -32,7 +33,7 @@ const getAllImages = (req, res) => {
   client.query(SQL)
   .then(results => {
     res.render('test', {allImages : results.rows})
-    .catch(err => consol.log(err, res))
+    .catch(err => console.log(err, res))
   });
 }
 const getClientImages = (req, res) => {
@@ -50,7 +51,9 @@ const getClientImages = (req, res) => {
 
 // ROUTES
 app.get('/', renderIndex);
-app.get('/images', getAllImages);
+app.get('/images', (req, res) => {
+  res.render('test', {allImages : ['','','','','','','','','','']})
+});
 app.get('/images:thidId', getClientImages);
 
 // LISTENER
