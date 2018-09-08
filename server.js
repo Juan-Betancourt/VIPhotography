@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'ejs');
 const pg = require('pg');
-require('pg').defaults.ssl = true;
+// require('pg').defaults.ssl = true;
 const PORT = process.env.PORT;
 
 // DEPENDANCY SETTINGS
@@ -29,7 +29,7 @@ const renderIndex = (req, res) => {
   res.render('index')
 }
 const getAllImages = (req, res) => {
-  let SQL = `SELECT img_data_id, img_url FROM imgdatas;`;
+  let SQL = `SELECT imgdata_id, img_url FROM imgdatas;`;
   client.query(SQL)
   .then(results => {
     res.render('test', {allImages : results.rows})
@@ -37,13 +37,13 @@ const getAllImages = (req, res) => {
   });
 }
 const getClientImages = (req, res) => {
-  let SQL = `SELECT img_data_id, users_id, lastname, img_url
-  FROM imgdatas INNER JOIN users ON imgdatas.user_id = users.user_id 
+  let SQL = `SELECT imgdata_id, user_id, users_id, lastname, img_url
+  FROM imgdatas INNER JOIN users ON imgdatas.users_id = users.user_id 
   WHERE user_id = ($1);`;
   let params = [req.params.thisId];
   client.query(SQL, params)
   .then(results => {
-    // console.log(results.rows);
+    console.log(results.rows);
     res.render('test', {allImages : results.rows})
     .catch(err => console.log(err, res))
   });
@@ -51,10 +51,19 @@ const getClientImages = (req, res) => {
 
 // ROUTES
 app.get('/', renderIndex);
-app.get('/images', (req, res) => {
-  res.render('test', {allImages : ['','','','','','','','','','']})
+app.get('/images', getAllImages);
+app.get('/images:thisId', (req, res) => {
+  let SQL = `SELECT imgdata_id, user_id, users_id, lastname, img_url
+  FROM imgdatas INNER JOIN users ON imgdatas.users_id = users.user_id 
+  WHERE users_id = ($1);`;
+  let thisId = [req.params.thisId];
+  client.query(SQL, thisId)
+  .then(results => {
+    console.log(results.rows);
+    res.render('test', {allImages : results.rows})
+    .catch(err => console.log(err, res))
+  });
 });
-app.get('/images:thidId', getClientImages);
 
 // LISTENER
 app.listen(PORT, () => {

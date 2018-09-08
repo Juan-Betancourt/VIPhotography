@@ -14,12 +14,11 @@
                 <div class="grid">
                     <% allImages.forEach(pic => { %>
                     <div class="module" id="<%= pic.imgdata_id %>">
-                    <% if (pic.img_url == '') {pic.img_url = 'http://place-hold.it/300x500?text=Placeholder'} %>
-                        <img src="<%= pic.img_url || 'http://place-hold.it/180x200?text=Placeholder' %>"/>
+                    <img src="<%= (pic.img_url || 'https://place-hold.it/200x200') %>">
                     </br>
-                        <p><%= pic.lastname %></p>
+                    <p><%= pic.lastname %></p>
                     </div>
-                    <% }) %>
+                    <% }); %>
         </section>
 </body>
 </html>
