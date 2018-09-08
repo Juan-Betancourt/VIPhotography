@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+    <script src="/public/jquery-3.3.1.min.js"></script>
+    <title>Test Page!</title>
+</head>
+<body>
+        <section id="image-container">
+                <h1>All Images</h1>
+                <ul>
+                    <% allImages.forEach(pic => { %>
+                    <li class="image-div" id="<%= pic.imgdata_id %>">
+                        <img src="<%= pic.img_url %>"/>
+                        <p><%= pic.lastname %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+</body>
+</html>
