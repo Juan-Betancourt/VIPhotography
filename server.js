@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
 client.on('error', error => {
-  console.error(error);
+    console.error(error);
 });
 
 // PUBLIC FOLDER ACCESS
@@ -65,6 +65,7 @@ app.get('/images:thisId', (req, res) => {
     .catch(err => console.log(err, res))
   });
 });
+<<<<<<< HEAD
 =======
 
 //This Path is a test path to display all the images for now. Possibly create a path just for the admin to see all the images in the database.
@@ -128,6 +129,9 @@ function postImg (req, res) {
 }
 
 >>>>>>> 4006236da4fb1e57930e848e99ca974645758f55
+=======
+// HELPER FUNCTIONS
+>>>>>>> 79fd325eae29abc299e81c26cd27a32257458375
 
 // LISTENER
 app.get('*', (request, response) => response.render('pages/error', {}));
@@ -138,9 +142,13 @@ app.listen(PORT, () => {
 });
 =======
     console.log(`Connected on port ${PORT}`);
+<<<<<<< HEAD
 });
 
 function handleError(error, response) {
   response.render('pages/error', {error: error});
 }
 >>>>>>> 4006236da4fb1e57930e848e99ca974645758f55
+=======
+});
+>>>>>>> 79fd325eae29abc299e81c26cd27a32257458375
