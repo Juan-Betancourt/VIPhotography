@@ -6,7 +6,6 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'ejs');
 const pg = require('pg');
-// require('pg').defaults.ssl = true;
 const PORT = process.env.PORT;
 
 // DEPENDANCY SETTINGS
@@ -18,58 +17,18 @@ app.set('view engine', 'ejs');
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
 client.on('error', error => {
-    console.error(error);
+  console.error(error);
 });
 
 // PUBLIC FOLDER ACCESS
 app.use(express.static('./public'));
 
-// HELPER FUNCTIONS 
-const renderIndex = (req, res) => {
-  res.render('index')
-}
-const getAllImages = (req, res) => {
-  let SQL = `SELECT imgdata_id, img_url FROM imgdatas;`;
-  client.query(SQL)
-  .then(results => {
-    res.render('test', {allImages : results.rows})
-    .catch(err => console.log(err, res))
-  });
-}
-const getClientImages = (req, res) => {
-  let SQL = `SELECT imgdata_id, user_id, users_id, lastname, img_url
-  FROM imgdatas INNER JOIN users ON imgdatas.users_id = users.user_id 
-  WHERE user_id = ($1);`;
-  let params = [req.params.thisId];
-  client.query(SQL, params)
-  .then(results => {
-    console.log(results.rows);
-    res.render('test', {allImages : results.rows})
-    .catch(err => console.log(err, res))
-  });
-};
-
 // ROUTES
-<<<<<<< HEAD
-app.get('/', renderIndex);
-app.get('/images', getAllImages);
-app.get('/images:thisId', (req, res) => {
-  let SQL = `SELECT imgdata_id, user_id, users_id, lastname, img_url
-  FROM imgdatas INNER JOIN users ON imgdatas.users_id = users.user_id 
-  WHERE users_id = ($1);`;
-  let thisId = [req.params.thisId];
-  client.query(SQL, thisId)
-  .then(results => {
-    console.log(results.rows);
-    res.render('test', {allImages : results.rows})
-    .catch(err => console.log(err, res))
-  });
-});
-<<<<<<< HEAD
-=======
-
 //This Path is a test path to display all the images for now. Possibly create a path just for the admin to see all the images in the database.
-app.get('/adminpage', (req, res) => {
+app.get('/', (req, res) => res.redirect('/adminpage')); // This is for testing purposes for now until we get this web-app done.
+app.get('/adminpage', adminAccess);
+
+function adminAccess (req, res) {
   client.query(`SELECT img_url FROM imgdatas`)
   .then(results =>{
       console.log(results.rows);
@@ -77,8 +36,7 @@ app.get('/adminpage', (req, res) => {
       // added the 2 tables into the database, This is to test if the stuffs were rendering correctly with the tables.
   })
   .catch(err => handleError(err, res));
-});
-
+}
 // This path need a show.ejs to show only user's images.
 app.post('/client', renderUserImg);
 
@@ -128,27 +86,13 @@ function postImg (req, res) {
   })
 }
 
->>>>>>> 4006236da4fb1e57930e848e99ca974645758f55
-=======
-// HELPER FUNCTIONS
->>>>>>> 79fd325eae29abc299e81c26cd27a32257458375
-
 // LISTENER
 app.get('*', (request, response) => response.render('pages/error', {}));
 
 app.listen(PORT, () => {
-<<<<<<< HEAD
-  console.log(`Connected on port ${PORT}`);
-});
-=======
     console.log(`Connected on port ${PORT}`);
-<<<<<<< HEAD
 });
 
 function handleError(error, response) {
   response.render('pages/error', {error: error});
 }
->>>>>>> 4006236da4fb1e57930e848e99ca974645758f55
-=======
-});
->>>>>>> 79fd325eae29abc299e81c26cd27a32257458375
