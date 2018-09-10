@@ -26,31 +26,19 @@ app.use(express.static('./public'));
 
 // ROUTES
 //This Path is a test path to display all the images for now. Possibly create a path just for the admin to see all the images in the database.
-app.get('/', (req, res) => res.redirect('/adminpage')); // This is for testing purposes for now until we get this web-app done.
+app.get('/', (req, res) => res.render('index'));
 app.get('/adminpage', adminAccess);
 
 // This path need a show.ejs to show only user's images.
+app.get('/client', (req,res) => res.render('./pages/clientAccess/clientView'));
 app.post('/client', renderUserImg);
 
 // This function will be only adding images into for the user already exist in our database.
 app.get('/addimg', addImgPage);
 app.post('/addimg', postImg);
 
-app.get('/samplepics', (req,res) =>{
-  res.render("./pages/samplePic/eventsample")
-})
-app.post('/samplepics', (req, res) => {
-  console.log(req.body.eventtype)
-
-  let url = `http://viphotographyapi.herokuapp.com/${req.body.eventtype}`;
-  superagent(url).query()
-  .then(data =>{
-    console.log(data.body);
-      res.render('./pages/samplePic/eventsample', {img: data.body});
-
-  })
-
-})
+app.get('/samplepics', renderSamplepic);
+app.post('/samplepics', readAPI);
 
 // HELPER FUNCTIONS
 
@@ -67,7 +55,7 @@ function renderUserImg(req, res) {
     client.query(SQL, values)
     .then(data =>{
       console.log(data.rows)
-      res.render('./pages/clientAccess/clientView', {img: data.rows} )
+      res.render('./pages/clientAccess/clientView', {img: data.rows})
     })
     .catch(err => handleError(err, res));
   })
@@ -98,10 +86,24 @@ function adminAccess (req, res) {
   client.query(`SELECT img_url FROM imgdatas`)
   .then(results =>{
       console.log(results.rows);
-      res.render('./pages/clientAccess/clientView', {img: results.rows} )
+      res.render('./pages/clientAccess/adminView', {img: results.rows} )
       // added the 2 tables into the database, This is to test if the stuffs were rendering correctly with the tables.
   })
   .catch(err => handleError(err, res));
+}
+
+function renderSamplepic (req,res){
+  res.render("./pages/samplePic/eventsample")
+}
+
+function readAPI (req, res) {
+  console.log(req.body.eventtype)
+  let url = `http://viphotographyapi.herokuapp.com/${req.body.eventtype}`;
+  superagent(url).query()
+  .then(data =>{
+    console.log(data.body);
+      res.render('./pages/samplePic/eventsample', {img: data.body});
+  })
 }
 
 // LISTENER
