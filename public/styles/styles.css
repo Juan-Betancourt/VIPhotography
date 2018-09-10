@@ -360,6 +360,7 @@ main ul li:last-child {
     .module img {
         max-width: 90%;
         border-radius: 5px;
+        height: calc(100%/1.1);
     }
 /* CLIENT ACCESS FORM */
 #client-access {
