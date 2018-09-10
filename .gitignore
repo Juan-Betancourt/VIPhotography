@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io/api/node,macos,windows
 
+### SQL###
+*.sql
+
 ### macOS ###
 # General
 .DS_Store
