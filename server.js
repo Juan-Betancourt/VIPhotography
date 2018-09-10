@@ -25,7 +25,7 @@ app.use(express.static('./public'));
 
 // ROUTES
 //This Path is a test path to display all the images for now. Possibly create a path just for the admin to see all the images in the database.
-app.get('/', (req, res) => res.redirect('/adminpage')); // This is for testing purposes for now until we get this web-app done.
+app.get('/', (req, res) => res.render('index'));
 app.get('/adminpage', adminAccess);
 
 function adminAccess (req, res) {
