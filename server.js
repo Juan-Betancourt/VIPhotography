@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 app.set('view engine', 'ejs');
 const pg = require('pg');
+const superagent = require('superagent')
 const PORT = process.env.PORT;
 
 // DEPENDANCY SETTINGS
@@ -28,21 +29,28 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.redirect('/adminpage')); // This is for testing purposes for now until we get this web-app done.
 app.get('/adminpage', adminAccess);
 
-function adminAccess (req, res) {
-  client.query(`SELECT img_url FROM imgdatas`)
-  .then(results =>{
-      console.log(results.rows);
-      res.render('./pages/clientAccess/clientView', {img: results.rows} )
-      // added the 2 tables into the database, This is to test if the stuffs were rendering correctly with the tables.
-  })
-  .catch(err => handleError(err, res));
-}
 // This path need a show.ejs to show only user's images.
 app.post('/client', renderUserImg);
 
 // This function will be only adding images into for the user already exist in our database.
 app.get('/addimg', addImgPage);
 app.post('/addimg', postImg);
+
+app.get('/samplepics', (req,res) =>{
+  res.render("./pages/samplePic/eventsample")
+})
+app.post('/samplepics', (req, res) => {
+  console.log(req.body.eventtype)
+
+  let url = `http://viphotographyapi.herokuapp.com/${req.body.eventtype}`;
+  superagent(url).query()
+  .then(data =>{
+    console.log(data.body);
+      res.render('./pages/samplePic/eventsample', {img: data.body});
+
+  })
+
+})
 
 // HELPER FUNCTIONS
 
@@ -52,16 +60,16 @@ function renderUserImg(req, res) {
   FROM users
   WHERE lastname = '${req.body.lastname}' AND pin = ${req.body.pin}`)
   .then(results =>{
-      console.log(results.rows[0].user_id);
-      let userid = results.rows[0].user_id;
-      let SQL = `SELECT img_url FROM imgdatas WHERE users_id = $1;`
-      let values = [userid]
-      client.query(SQL, values)
-      .then(data =>{
-        console.log(data.rows)
-        res.render('./pages/clientAccess/clientView', {img: data.rows} )
-      })
-      .catch(err => handleError(err, res));
+    console.log(results.rows[0].user_id);
+    let userid = results.rows[0].user_id;
+    let SQL = `SELECT img_url FROM imgdatas WHERE users_id = $1;`
+    let values = [userid]
+    client.query(SQL, values)
+    .then(data =>{
+      console.log(data.rows)
+      res.render('./pages/clientAccess/clientView', {img: data.rows} )
+    })
+    .catch(err => handleError(err, res));
   })
   .catch(err => handleError(err, res));
 }
@@ -86,6 +94,15 @@ function postImg (req, res) {
   })
 }
 
+function adminAccess (req, res) {
+  client.query(`SELECT img_url FROM imgdatas`)
+  .then(results =>{
+      console.log(results.rows);
+      res.render('./pages/clientAccess/clientView', {img: results.rows} )
+      // added the 2 tables into the database, This is to test if the stuffs were rendering correctly with the tables.
+  })
+  .catch(err => handleError(err, res));
+}
 
 // LISTENER
 app.get('*', (request, response) => response.render('pages/error', {}));

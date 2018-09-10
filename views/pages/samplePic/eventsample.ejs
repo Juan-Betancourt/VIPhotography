@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+</head>
+<body>
+    <h4>SAMPLE PICTURES</h4>
+    <div id="eventSelectBox"style="width:200px;">
+        <form id ="searchpicturesapi" action="/samplepics" method= "post">
+            <select name = "eventtype">
+                <option value="" >Select Events</option>
+                <option value="wedding" name="wedding">Wedding</option>
+                <option value="beach" name="beach">Beach</option>
+                <option value="graduation" name="graduation">Graduation</option>
+                <option value="poses" name="poses">Poses</option>
+                <option value="pets" name="pets">Pets</option>
+                <option value="birthdays" name="birthdays">Birthdays</option>
+                <option value="christmas" name="Christmas">Christmas</option>
+                <option value="foods" name="foods">Foods</option>
+                <option value="parties" name="parties">Parties</option>
+                <option value="landscape" name="landscape">Landscape</option>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+    <ul id= "hide">
+            <% if(typeof img === 'object'){ %>
+                <% img.forEach((pic) => { %>
+        <li>
+                <img src="<%= pic.img_url %>" alt="picture"height="300px" width="200px">
+        </li>
+                <% }); %>
+            <%} %>
+    </ul>
+
+
+</body>
+</html>
