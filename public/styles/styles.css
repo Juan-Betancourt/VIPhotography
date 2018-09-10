@@ -114,14 +114,14 @@ body {
 
 /* Top bar */
 
-#top-bar {
+/* #top-bar {
     position: fixed;
     z-index: 10;
     width: 100%;
     height: 10px;
     background-color: #454545;
 }
-
+ */
 
 /* NAVIGATION */
 
@@ -204,7 +204,7 @@ a:hover {
     font-weight: 200
 }
 
-a:nth-child(1) {
+/* a:nth-child(1) {
     position: fixed;
     top: 10%;
 }
@@ -227,7 +227,7 @@ a:nth-child(4) {
 a:nth-child(5) {
     position: fixed;
     top: 90%;
-}
+} */
 
 #click-toggle-arrow {
     position: relative;
@@ -332,7 +332,7 @@ main ul li:last-child {
         padding: 5px;
         margin: auto;
         text-align: center;
-    }    
+    }
     .grid {
         display: flex;
         flex-wrap: wrap;
@@ -369,4 +369,33 @@ main ul li:last-child {
 }
 #client-access input {
     margin: 5px;
+}
+
+/* FOOTER */
+footer {
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 40px;   /* Height of the footer */
+  text-align: center;
+}
+/* NEW HEADER replacing nav bar for now. */
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    /* width: 200px; */
+    height: 100px;
+}
+.nav li{
+    float:left;
+}
+.nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }

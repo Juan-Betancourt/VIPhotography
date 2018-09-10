@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../../partials/head') %>
+<body>
+    <%- include('../../partials/header') %>
+    <h4>SAMPLE PICTURES</h4>
+    <div id="eventSelectBox"style="width:200px;">
+        <form id ="searchpicturesapi" action="/samplepics" method= "post">
+            <select name = "eventtype">
+                <option value="" >Select Events</option>
+                <option value="wedding" name="wedding">Wedding</option>
+                <option value="beach" name="beach">Beach</option>
+                <option value="graduation" name="graduation">Graduation</option>
+                <option value="poses" name="poses">Poses</option>
+                <option value="pets" name="pets">Pets</option>
+                <option value="birthdays" name="birthdays">Birthdays</option>
+                <option value="christmas" name="Christmas">Christmas</option>
+                <option value="foods" name="foods">Foods</option>
+                <option value="parties" name="parties">Parties</option>
+                <option value="landscape" name="landscape">Landscape</option>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+    <section id="image-container">
+<% if(typeof img === 'object'){ %>
+        <div class="grid">
+            <% img.forEach(pic => { %>
+            <div class="module">
+                <img src="<%= (pic.img_url || 'https://place-hold.it/200x200') %>">
+            </div>
+        <% }); %>
+<%} %>
+    </section>
+
+</body>
+</html>
