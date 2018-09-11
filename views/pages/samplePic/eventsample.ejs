@@ -27,9 +27,13 @@
         <div class="grid">
             <% img.forEach(pic => { %>
             <div class="module">
-                <img src="<%= (pic.img_url || 'https://place-hold.it/200x200') %>">
+                <!-- <a href="<%= pic.img_url %>" target="_blank"> -->
+                <img src="<%= (pic.img_url) %>" ondblclick= 'window.open("<%= pic.img_url %>?cs=srgb&dl=<<%= pic.eventtype%>>.jpg&fm=jpg")'>
+                <!-- </a> -->
             </div>
         <% }); %>
+
+
 <%} %>
     </section>
 
