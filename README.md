@@ -53,3 +53,7 @@ As dev allow users to see about us page to learn more about us
 * Remove Admin page from clint access
 
 * In the aboutus.ejs  add a images for each person to click and go to their Linkedin page
+
+* Ensure photos are not doubles show up
+
+
