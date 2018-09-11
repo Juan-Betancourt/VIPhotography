@@ -5,7 +5,7 @@ https://www.flaticon.com/free-icon/close-envelope_12194#term=email&page=1&positi
 
 # API Credit
 
-# User Stories:
+# User Stories: (For visable ad check under file public/style/assets)
 
 As a user I want to be able to login to the site and see my photos displayed
 
@@ -50,3 +50,4 @@ As dev allow users to see about us page to learn more about us
 
 * Pop up when seleting a date that if the appointment is close to two weeks the user is charged 10% with an accept and decline clickable button
 
+* Remove Admin page from clint access
