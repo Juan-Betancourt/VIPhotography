@@ -3,6 +3,8 @@ A website for clients to book their special occasion, view, and download their i
 //Credit used data and images//
 https://www.flaticon.com/free-icon/close-envelope_12194#term=email&page=1&position=2
 
+# API Credit
+
 # User Stories:
 
 As a user I want to be able to login to the site and see my photos displayed
