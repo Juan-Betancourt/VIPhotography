@@ -51,3 +51,5 @@ As dev allow users to see about us page to learn more about us
 * Pop up when seleting a date that if the appointment is close to two weeks the user is charged 10% with an accept and decline clickable button
 
 * Remove Admin page from clint access
+
+* In the aboutus.ejs  add a images for each person to click and go to their Linkedin page
