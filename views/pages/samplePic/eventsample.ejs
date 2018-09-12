@@ -5,8 +5,8 @@
     <%- include('../../partials/header') %>
     <h4>SAMPLE PICTURES</h4>
     <div id="eventSelectBox"style="width:200px;">
-        <form id ="searchpicturesapi" action="/samplepics" method= "post">
-            <select name = "eventtype">
+        <form name = "eventform" id ="searchpicturesapi" action="/samplepics" method= "post">
+            <select name = "eventtype" onchange="eventform.submit()">
                 <option value="" >Select Events</option>
                 <option value="wedding" name="wedding">Wedding</option>
                 <option value="beach" name="beach">Beach</option>
@@ -18,8 +18,8 @@
                 <option value="foods" name="foods">Foods</option>
                 <option value="parties" name="parties">Parties</option>
                 <option value="landscape" name="landscape">Landscape</option>
-            </select>
-            <input type="submit">
+            </select >
+            <!-- <input type="submit"> -->
         </form>
     </div>
     <section id="image-container">
