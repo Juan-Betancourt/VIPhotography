@@ -21,14 +21,14 @@ $('document').ready(function() {
             $('#slide-out a').fadeIn(800);
         }, 1000);
 
-        return false;
+        // return false;
     });
 
 
     //Slide out nav bar
     $('#slide-out').click(function() {
         $('#slide-down').toggle('slide', 800, { direction: 'up' });
-        return false;
+        // return false;
     });
 
 
@@ -48,7 +48,7 @@ $('document').ready(function() {
         //Reveal nav button again
         $('#click-toggle-arrow').fadeIn(900);
         $('#click-toggle-circle').fadeIn(900);
-        return false;
+        // return false;
     });
 
     //download links
