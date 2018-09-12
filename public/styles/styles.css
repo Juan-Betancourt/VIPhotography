@@ -68,68 +68,13 @@ body {
     padding: 1%
 }
 
-
-/* CONTENT */
-
-
-/* #first-title {
-    position: relative;
-    top: 8%;
-    left: 18%;
-    font-weight: 300;
-    font-family: 'Josefin Sans', sans-serif;
-    width: 50%;
-    font-size: 4vw;
-}
-
-#first-content {
-    position: relative;
-    top: 9%;
-    left: 18%;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 100;
-    width: 70%;
-    font-size: 3vw;
-}
-
-#second-container {
-    position: absolute;
-    width: 100%;
-    top: 650px;
-    height: 650px;
-    background-color: #EBEBEB;
-    z-index: 1;
-    display: block;
-}
-
-#second-title {
-    position: relative;
-    top: 5%;
-    left: 18%;
-    font-family: 'Titillium Web', sans-serif;
-    width: 50%;
-    font-size: 60px;
-} */
-
-
-/* Top bar */
-
-/* #top-bar {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 10px;
-    background-color: #454545;
-}
- */
-
 /* NAVIGATION */
 
 #left-bar {
     position: fixed;
-    height: 100%;
-    width: 10px;
-    background-color: #80D9FF;
+    height: 40%;
+    width: 0px;
+    background-color: #333;
     z-index: 2;
 }
 
@@ -142,11 +87,11 @@ body {
     position: fixed;
     display: none;
     /* Stops it displaying by default */
-    background-color: #80D9FF;
+    background-color: #333;
     color: #FFF;
     padding: 10px;
-    height: 100%;
-    width: 180px;
+    height: 40%;
+    width: 170px;
     z-index: 2;
 }
 
@@ -167,8 +112,8 @@ body {
 #circle {
     display: none;
     position: fixed;
-    left: 65px;
-    top: 25px;
+    left: 10px;
+    top: 10px;
     height: 50px;
     width: 50px;
     border: 2px solid #417C81;
@@ -186,48 +131,43 @@ body {
 
 /* Individual list items */
 
-a {
+#navbar a {
     text-decoration: none;
     display: block;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
-    color: #417C81;
-    font-size: 2vw;
+    color: white;
+    font-size: 4vw;
     font-weight: 300;
     text-align: center;
-    width: 175px;
+    width: 170px;
     cursor: pointer;
 }
 
-a:hover {
+#navbar a:hover {
     color: white;
     font-weight: 200
 }
 
-/* a:nth-child(1) {
+#navbar a:nth-child(1) {
     position: fixed;
     top: 10%;
 }
 
-a:nth-child(2) {
+#navbar a:nth-child(2) {
     position: fixed;
-    top: 30%;
+    top: 19%;
 }
 
-a:nth-child(3) {
+#navbar a:nth-child(3) {
     position: fixed;
-    top: 50%;
+    top: 28%;
 }
 
-a:nth-child(4) {
+#navbar a:nth-child(4) {
     position: fixed;
-    top: 70%;
+    top: 37%;
 }
-
-a:nth-child(5) {
-    position: fixed;
-    top: 90%;
-} */
 
 #click-toggle-arrow {
     position: relative;
@@ -245,8 +185,8 @@ a:nth-child(5) {
 
 #click-toggle-circle {
     position: fixed;
-    left: 20px;
-    top: 45%;
+    left: 10px;
+    top: 10px;
     height: 50px;
     width: 50px;
     border: 2px solid #417C81;
@@ -272,7 +212,6 @@ a:nth-child(5) {
     font-family: 'Titillium Web', sans-serif;
     z-index: 2;
 }
-
 
 /*** Main ***/
 
@@ -380,22 +319,45 @@ footer {
   text-align: center;
 }
 /* NEW HEADER replacing nav bar for now. */
-.nav ul {
+.header nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    /* width: 200px; */
-    height: 100px;
+    max-width: 100%;
 }
-.nav li{
-    float:left;
+.header nav ul li {
+    max-width: 100%;
+    display: inline-block;
+    float: right;
+    padding-right: 1%
 }
-.nav li a{
-    display: block;
+.header nav ul li a{
+    display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 2em;
+}
+#top-title {
+    background-color: #333;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px 1em 1em 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #bfdaf2;
+}
+#navbar {
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    .header {
+        display: none;
+    }
+    #navbar {
+        display: contents;
+    }
 }
