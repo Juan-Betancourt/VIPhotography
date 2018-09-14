@@ -50,4 +50,9 @@ $('document').ready(function() {
         $('#click-toggle-circle').fadeIn(900);
         // return false;
     });
+
+    //download links
+    // $('.download').click(function(){
+    //     console.log($('.download').src)
+    // })
 });
