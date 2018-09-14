@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 
 /* Top bar */
 
@@ -9,6 +12,7 @@
     height: 10px;
     background-color: #454545;
 }
+<<<<<<< HEAD
  */
 =======
 html,
@@ -81,6 +85,8 @@ body {
     padding: 1%
 }
 >>>>>>> f255eafbafe56f3e0f817d5b85d4723685af0db2
+=======
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 
 /* NAVIGATION */
 
@@ -142,7 +148,7 @@ body {
     cursor: pointer;
 }
 
-    #slide-out {
+#slide-out {
         position: fixed;
         display: none;
         /* Stops it displaying by default */
@@ -152,9 +158,9 @@ body {
         height: 100%;
         width: 180px;
         z-index: 2;
-    }
+}
 
-    #arrow {
+#arrow {
         display: none;
         position: relative;
         height: 20px;
@@ -166,6 +172,7 @@ body {
         transform: rotate(45deg);
         color: white;
         z-index: 10;
+<<<<<<< HEAD
     }
 
 <<<<<<< HEAD
@@ -246,6 +253,10 @@ body {
         z-index: 10;
     }
 =======
+=======
+}
+
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 #navbar a {
     text-decoration: none;
     display: block;
@@ -284,6 +295,7 @@ body {
     top: 37%;
 }
 
+<<<<<<< HEAD
 #click-toggle-arrow {
     position: relative;
     right: 10px;
@@ -298,6 +310,27 @@ body {
     z-index: 10;
 }
 
+=======
+a:nth-child(5) {
+        position: fixed;
+        top: 90%;
+}
+
+#click-toggle-arrow {
+        position: relative;
+        right: 10px;
+        height: 20px;
+        width: 20px;
+        border: 2px solid;
+        border-right: none;
+        border-top: none;
+        margin: 14px 19px;
+        transform: rotate(225deg);
+        color: white;
+        z-index: 10;
+}
+
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 #click-toggle-circle {
     position: fixed;
     left: 10px;
@@ -310,28 +343,22 @@ body {
     z-index: 50;
     cursor: pointer;
 }
+<<<<<<< HEAD
 >>>>>>> f255eafbafe56f3e0f817d5b85d4723685af0db2
+=======
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 
-    #click-toggle-circle {
-        position: fixed;
-        left: 20px;
-        top: 45%;
-        height: 50px;
-        width: 50px;
-        border: 2px solid #417C81;
-        border-radius: 50%;
-        background-color: #417C81;
-        z-index: 50;
-        cursor: pointer;
-    }
-
-    #click-toggle-circle:hover {
+#click-toggle-circle:hover {
         background-color: #206168;
         border-color: #206168;
-    }
+}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     #nav-prompt {
+=======
+#nav-prompt {
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
         position: fixed;
         width: 200px;
         height: 45%;
@@ -341,56 +368,61 @@ body {
         top: 46%;
         font-family: 'Titillium Web', sans-serif;
         z-index: 2;
-    }
-    /*** Main ***/
+}
 
-    main {
+/* Main */
+
+main {
         width: 960px;
         margin: 30px auto;
+<<<<<<< HEAD
     }
 =======
 /*** Main ***/
 >>>>>>> f255eafbafe56f3e0f817d5b85d4723685af0db2
+=======
+}
+>>>>>>> e384bc1eb396459947a0ea711cbf8679e79ff188
 
-    main ul li {
+main ul li {
         /* display: inline-block; */
         list-style: none;
         float: left;
         margin: 30px 30px 30px 0px;
-    }
+}
 
-    main ul li:last-child {
+main ul li:last-child {
         margin-right: 0px;
-    }
+}
 
 main ul li:last-child {
     margin-right: 0px;
-    }
-    section img {
-        float: left;
-    }
+}
 
-    ;
-    section div {
+section img {
+        float: left;
+}
+
+section div {
         width: calc(50% - 30px);
         float: left;
         padding-left: 30px;
         margin-bottom: 30px;
-    }
+}
 
-    h2 {
+h2 {
         font-size: 20px;
-    }
+}
 
-    section div p {
+section div p {
         height: 320px;
         overflow: auto;
         font-size: 18px;
         line-height: 24px;
         font-style: italic;
-    }
+}
 
-    button {
+button {
         border: none;
         padding: 10px 30px;
         background-color: #000;
@@ -400,28 +432,31 @@ main ul li:last-child {
         margin-top: 17px;
         transition: 350ms;
         cursor: pointer;
-    }
+}
 
-    button:hover {
+button:hover {
         background: rgb(54, 54, 59);
-    }
+}
 
-    /* IMAGE CONTAINER GRID */
-    #image-container {
+/* IMAGE CONTAINER GRID */
+
+#image-container {
         width: 90%;
         padding: 5px;
         margin: auto;
         text-align: center;
-    }
-    .grid {
+}
+
+.grid {
         display: flex;
         flex-wrap: wrap;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         grid-auto-rows: minmax(150px, auto);
         grid-gap: 1em;
-      }
-    .module {
+}
+
+.module {
         background: #eaeaea;
         display: flex;
         align-items: center;
@@ -431,27 +466,33 @@ main ul li:last-child {
         margin-right: 5px;
         flex: 1 1 200px;
         border-radius: 10px;
-      }
-    @supports (display: grid) {
+}
+
+@supports (display: grid) {
         .module {
           margin: 10;
         }
-    }
-    .module img {
+}
+
+.module img {
         max-width: 90%;
         border-radius: 5px;
         height: calc(100%/1.1);
-    }
+}
+
 /* CLIENT ACCESS FORM */
+
 #client-access {
     max-width: 100%;
     margin-left: 5%;
 }
+
 #client-access input {
     margin: 5px;
 }
 
 /* FOOTER */
+
 footer {
   display: block;
   bottom: 0;
@@ -459,7 +500,9 @@ footer {
   height: 40px;   /* Height of the footer */
   text-align: center;
 }
+
 /* NEW HEADER replacing nav bar for now. */
+
 .header nav ul {
     list-style-type: none;
     margin: 0;
@@ -468,12 +511,14 @@ footer {
     background-color: #333;
     max-width: 100%;
 }
+
 .header nav ul li {
     max-width: 100%;
     display: inline-block;
     float: right;
     padding-right: 1%
 }
+
 .header nav ul li a{
     display: inline-block;
     color: white;
@@ -483,6 +528,7 @@ footer {
     font-family: 'Josefin Sans', sans-serif;
     padding-left: 2em;
 }
+
 #top-title {
     background-color: #333;
     text-align: center;
@@ -491,9 +537,11 @@ footer {
     font-family: 'Josefin Sans', sans-serif;
     color: #bfdaf2;
 }
+
 #navbar {
     display: none;
 }
+
 @media screen and (max-width: 650px) {
     .header {
         display: none;
