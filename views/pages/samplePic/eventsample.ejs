@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <%- include('../../partials/head') %>
+<%- include('../../partials/head') %>
+
 <body>
     <%- include('../../partials/header') %>
     <%- include('../../partials/nav') %>
-    <h4>SAMPLE PICTURES</h4>
-    <div id="eventSelectBox"style="width:200px;">
-        <form name = "eventform" id ="searchpicturesapi" action="/samplepics" method= "post">
-            <select name = "eventtype" onchange="eventform.submit()">
-                <option value="" >Select Events</option>
-                <option value="wedding" name="wedding">Wedding</option>
-                <option value="beach" name="beach">Beach</option>
-                <option value="graduation" name="graduation">Graduation</option>
-                <option value="poses" name="poses">Poses</option>
-                <option value="pets" name="pets">Pets</option>
-                <option value="birthdays" name="birthdays">Birthdays</option>
-                <option value="christmas" name="Christmas">Christmas</option>
-                <option value="foods" name="foods">Foods</option>
-                <option value="parties" name="parties">Parties</option>
-                <option value="landscape" name="landscape">Landscape</option>
-            </select >
-            <!-- <input type="submit"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/dropbox.css" />
+
+    <h2>Welcome to sample picture page, please choose an option to view our sample photoshoots.</h2>
+    <div class="dropp">
+        <form class="dropp" name="eventform" id="searchpicturesapi" action="/samplepics" method="post">
+            <div class="dropp-header">
+                <span class="dropp-header__title js-value">Choose an option</span>
+                <a href="#" class="dropp-header__btn js-dropp-action"><i class="icon"></i></a>
+            </div>
+            <div class="dropp-body">
+                <label for="wedding">Wedding<input type="radio" id="wedding" name="eventtype" value="wedding" /></label>
+                <label for="beach">Beach<input type="radio" id="beach" name="eventtype" value="beach" /></label>
+                <label for="graduation">Graduation<input type="radio" id="graduation" name="eventtype" value="graduation" /></label>
+                <label for="poses">Poses<input type="radio" id="poses" name="eventtype" value="poses" /></label>
+                <label for="pets">Pets<input type="radio" id="pets" name="eventtype" value="pets" /></label>
+                <label for="birthdays">Birthdays<input type="radio" id="birthdays" name="eventtype" value="birthdays" /></label>
+                <label for="christmas">Christmas<input type="radio" id="christmas" name="eventtype" value="christmas" /></label>
+                <label for="foods">Foods<input type="radio" id="foods" name="eventtype" value="foods" /></label>
+                <label for="parties">Parties<input type="radio" id="parties" name="eventtype" value="parties" /></label>
+                <label for="landscape">Landscape<input type="radio" id="landscape" name="eventtype" value="landscape" /></label>
+            </div>
         </form>
     </div>
 
@@ -92,4 +97,5 @@
       
       </div>
 </body>
+
 </html>
