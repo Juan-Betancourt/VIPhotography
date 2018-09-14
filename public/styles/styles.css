@@ -185,7 +185,7 @@
 
 /* Main */
 
-main {
+/* main {
         width: 960px;
         margin: 30px auto;
 }
@@ -243,15 +243,15 @@ button {
 
 button:hover {
         background: rgb(54, 54, 59);
-}
+} */
 
 /* IMAGE CONTAINER GRID */
 
-#image-container {
-        width: 90%;
-        padding: 5px;
-        margin: auto;
-        text-align: center;
+#image-containerabsolute {
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+    text-align: center;
 }
 
 .grid {
@@ -310,7 +310,7 @@ button:hover {
 /* FOOTER */
 
 footer {
-  display: block;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 40px;
@@ -370,6 +370,11 @@ footer {
 .iconGroup li{
     margin-left: -25px;
 }
+#navh2{
+    font-size: 20px;
+    color: #bfdaf2;
+    padding-left: 5px;
+}
 
 @media screen and (max-width: 650px) {
     .header {
@@ -386,9 +391,13 @@ body { margin: 0; font: 16px/1.3 sans-serif; }
 .CSSgal {
     position: relative;
     overflow: hidden;
-    height: 60%;
-    width: 90%;
-    margin: 0 auto;
+    height: 410px;
+    width: 700px;
+    left: 50%;
+    top: 35%;
+    margin-top: -205px;
+    margin-left: -350px;
+    z-index: 1;
 }
 
 /* SLIDER */
@@ -541,7 +550,7 @@ body { margin: 0; font: 16px/1.3 sans-serif; }
     text-align: center;
 }
 .CSSgal .slider h2 {
-    margin-top: 2vh;
+    margin-top: 2.75vh;
     font-weight: 200;
     letter-spacing: -0.06em;
     word-spacing: 0.2em;
