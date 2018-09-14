@@ -240,10 +240,19 @@ main ul li:last-child {
 /* CLIENT ACCESS FORM */
 #client-access {
     max-width: 100%;
-    margin-left: 5%;
+    margin: auto;
 }
 #client-access input {
     margin: 5px;
+    width: 180px;
+    height: 35px;
+}
+#client-form{
+    width: 200px;
+    margin: auto;
+}
+#client-access button{
+    margin: auto 35px;
 }
 
 /* FOOTER */
