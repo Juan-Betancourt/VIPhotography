@@ -30,7 +30,7 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/adminpage', adminAccess);
 
 //About us page
-app.get('/about', (req,res) => res.render('./pages/about/aboutus'))
+app.get('/about', (req,res) => res.render('./pages/about/creators'))
 
 // This path need a show.ejs to show only user's images.
 app.get('/client', (req,res) => res.render('./pages/clientAccess/clientView'));
