@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html>
     <%- include('../../partials/head') %>
-    <!-- <link rel="stylesheet" href="/styles/contactForm.css"> -->
 <body>
     <%- include('../../partials/header') %>
     <%- include('../../partials/nav') %>
-    <!-- <h2 class="headline"> Please enter your credentials</h2>
-    <main id= "client-form">
-        <form id="client-access" action="/client" method="post">
-            <input type="text" name="lastname" placeholder="Last Name" required> <br>
-            <input type="password" name="pin" placeholder="4 Digits PIN" minlength="4" maxlength="4" required> <br>
-            <button type="submit">Submit</button>
-        </form>
-    </main> -->
     <section id="image-container">
         <h5 id="wbh5">Welcome back <%=name%>!</h5>
         <div class="grid">
@@ -20,7 +11,7 @@
             <% img.forEach(pic => { %>
 
             <div class="module">
-                <img src="<%= (pic.img_url || 'https://place-hold.it/200x200') %>">
+                <img src="<%= (pic.img_url || 'https://place-hold.it/200x200') %>" onclick="window.open('<%= pic.img_url %>')">
             </div>
         <% }); %>
 <%} %>
