@@ -1,60 +1,39 @@
 # VIPhotography
 A website for clients to book their special occasion, view, and download their images from a database utilizing API.
-//Credit used data and images//
-https://www.flaticon.com/free-icon/close-envelope_12194#term=email&page=1&position=2
 
-# API Credit
+**Author**: Hai Le, Chris Kozlowski, Juan Betancourt, Nicholas Welch
+**Version**: 1.87.0
 
-# User Stories: (For visible ad check under file public/style/assets)
+## Overview
 
-As a user I want to be able to login to the site and see my photos displayed
+This application provides the accessibility, functionability, and simplicity to the user to view and download their photos. Futhermore, this webapp provides the photographer the ability to upload photos specifically to the client with their unique username and pin. The reason for this site is to provide the client and user a communication access and save their memories forever.
 
-As a user I want to be able to download my photos into a zip
+## Getting Started
+The user must utilize the languages of HTML for the wireframe, CSS for the colors and layout. Additionally, the use of JavaScript is essential to provide the functionality of the webapp. However, the library of jQuery will reduce the code and avoide redundancy. Build a database with SQL to ADD, DELETE, and search WHERE specific names or categories are available to the webapp.
 
-As a user I want to be able to select my fav pics 
+## Architecture
+Developing this site was complex because the following languages, libraries, and packages were utilized. 
+###### 1. Languages
+* HTML
+* CSS
+* JavaScript
+* SQL
+###### 2. library
+* jQuery
+###### 3. Packages
+* EJS
+* Nodemon
+* PG
+* Postgres
+* Express
+* Dotenv
+* Superagent
+###### 4. Others
+* API 
+* Database
 
-As a user I want to be able to see my photos and limit access to others seeing my photos
-
-As a user want to be able to order photos though the site
-
-As a user want to be able to pay deposit for appointment
-
-# Dev
-As a dev I want to be able to store all clients photos into the database for each client
-
-As a dev I want user to be any access their own photos
-
-As a dev I want to be able to upload clients photos and places those photos into the database for each indivial
-
-As a dev I want users to be able to schedule appointments for photo shoots and not be able to overlap
-
-As a dev I want to be able to accept payments though PayPal using PayPal API
-
-As a dev want the user to have easy nav to the photos and site
-
-As dev allow users to see about us page to learn more about us
-
-#Strech goals:
-
-* Add a calendar to show users what dates and times are available
-
-* With Calendar be able to have user add, change, cancel appointments
-
-* User use pin codes to with username to search for their photos
-
-* Dev able to mange appointments, photos, pay, and orders on the Admin side
-
-* Set the site to a live server with AWS cloud to store the photos
-
-*  If user cancels appointment the calendar with grey out for 3 days not allowing users to take spot if user decides to change their mind and reschedule
-
-* Pop up when selecting a date that if the appointment is close to two weeks the user is charged 10% with an accept and decline clickable button
-
-* Remove Admin page from client access
-
-* In the aboutus.ejs  add a images for each person to click and go to their Linkedin page
-
-* Ensure photos are not doubles show up
+## Credits and Collaborations
+Thanks to JB the instructor of Code Fellows and the TA's for helping build this site. Special thanks to the four collaborators that put this webapp together. Thank you to Pexels (https://www.pexels.com/) for allowing us to add photos throughout the site.
 
 
 
