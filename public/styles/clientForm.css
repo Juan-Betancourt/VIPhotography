@@ -4,12 +4,26 @@ html{    background:url(https://images.pexels.com/photos/277574/pexels-photo-277
   background-size: cover;
   height:100%;
 }
-#contacth2{
+/* #contacth2{
+		text-align: center;
+		color: #0c2230;
+		font-family: Helvetica, sans-serif;
     text-align: center;
+    font-size: 250%;
+		line-height: 400%;
+		margin: 0px auto;
+} */
+#contacth2{
+	margin-top: 60px;
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 40px;
+	font-family: Helvetica, sans-serif;
+	color: #0c2230;
 }
 
 #feedback-page{
-	text-align:center;
+	text-align: center;
 }
 
 #form-main{
@@ -28,7 +42,6 @@ html{    background:url(https://images.pexels.com/photos/277574/pexels-photo-277
 	float: left;
 	left: 50%;
 	position: absolute;
-  margin-top:30px;
 	margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;

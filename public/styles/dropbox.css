@@ -8,6 +8,7 @@ html {
 }
 body {
   font: 1em/1.6 "Varela Round", Arial, sans-serif;
+  background-color: rgb(231, 231, 231);
 }
 
 .icon {
@@ -25,7 +26,7 @@ body {
 .dropp {
   position: fixed;
   width: 400px;
-  left: 50%; 
+  left: 50%;
   margin-left: -200px;
   box-shadow: 0 1px 3px #0b0b0b;
   z-index: 5;
