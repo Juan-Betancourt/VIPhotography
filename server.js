@@ -29,11 +29,14 @@ app.use(express.static('./public'));
 app.get('/', (req, res) => res.render('index'));
 app.get('/adminpage', adminAccess);
 
+//Contact page
+app.get('/contact', (req,res) => res.render('./pages/contact/contactForm'))
+
 //About us page
-app.get('/about', (req,res) => res.render('./pages/about/aboutus'))
+app.get('/about', (req,res) => res.render('./pages/about/creators'))
 
 // This path need a show.ejs to show only user's images.
-app.get('/client', (req,res) => res.render('./pages/clientAccess/clientView'));
+app.get('/client', (req,res) => res.render('./pages/clientAccess/clientForm'));
 app.post('/client', renderUserImg);
 
 // This function will be only adding images into for the user already exist in our database.
@@ -65,7 +68,7 @@ function renderUserImg(req, res) {
     client.query(SQL, values)
     .then(data =>{
       console.log(data.rows)
-      res.render('./pages/clientAccess/clientView', {img: data.rows})
+      res.render('./pages/clientAccess/clientView', {img: data.rows,name: req.body.lastname })
     })
     .catch(err => handleError(err, res));
   })

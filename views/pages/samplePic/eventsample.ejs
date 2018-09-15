@@ -1,42 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <%- include('../../partials/head') %>
+<%- include('../../partials/head') %>
 <body>
     <%- include('../../partials/header') %>
     <%- include('../../partials/nav') %>
-    <h4>SAMPLE PICTURES</h4>
-    <div id="eventSelectBox"style="width:200px;">
-        <form name = "eventform" id ="searchpicturesapi" action="/samplepics" method= "post">
-            <select name = "eventtype" onchange="eventform.submit()">
-                <option value="" >Select Events</option>
-                <option value="wedding" name="wedding">Wedding</option>
-                <option value="beach" name="beach">Beach</option>
-                <option value="graduation" name="graduation">Graduation</option>
-                <option value="poses" name="poses">Poses</option>
-                <option value="pets" name="pets">Pets</option>
-                <option value="birthdays" name="birthdays">Birthdays</option>
-                <option value="christmas" name="Christmas">Christmas</option>
-                <option value="foods" name="foods">Foods</option>
-                <option value="parties" name="parties">Parties</option>
-                <option value="landscape" name="landscape">Landscape</option>
-            </select >
-            <!-- <input type="submit"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/dropbox.css" />
+    <h2 class="headline">Choose a category to view picture samples</h2>
+    <div class="dropp">
+        <form class="dropp" name="eventform" id="searchpicturesapi" action="/samplepics" method="post">
+            <div class="dropp-header">
+                <span class="dropp-header__title js-value">Choose an option</span>
+                <a href="#" class="dropp-header__btn js-dropp-action"><i class="icon"></i></a>
+            </div>
+            <div class="dropp-body">
+                <label for="wedding">Wedding<input type="radio" id="wedding" name="eventtype" value="wedding" /></label>
+                <label for="beach">Beach<input type="radio" id="beach" name="eventtype" value="beach" /></label>
+                <label for="graduation">Graduation<input type="radio" id="graduation" name="eventtype" value="graduation" /></label>
+                <label for="poses">Poses<input type="radio" id="poses" name="eventtype" value="poses" /></label>
+                <label for="pets">Pets<input type="radio" id="pets" name="eventtype" value="pets" /></label>
+                <label for="birthdays">Birthdays<input type="radio" id="birthdays" name="eventtype" value="birthdays" /></label>
+                <label for="christmas">Christmas<input type="radio" id="christmas" name="eventtype" value="christmas" /></label>
+                <label for="foods">Foods<input type="radio" id="foods" name="eventtype" value="foods" /></label>
+                <label for="parties">Parties<input type="radio" id="parties" name="eventtype" value="parties" /></label>
+                <label for="landscape">Landscape<input type="radio" id="landscape" name="eventtype" value="landscape" /></label>
+            </div>
         </form>
     </div>
-    <section id="image-container">
-<% if(typeof img === 'object'){ %>
-        <div class="grid">
+    <div class="CSSgal">
+        <s id="s1"></s>
+        <s id="s2"></s>
+        <s id="s3"></s>
+        <s id="s4"></s>
+        <s id="s5"></s>
+        <s id="s6"></s>
+        <s id="s7"></s>
+        <s id="s8"></s>
+        <s id="s9"></s>
+        <s id="s10"></s>
+        <s id="s11"></s>
+        <s id="s12"></s>
+        <s id="s13"></s>
+        <s id="s14"></s>
+        <s id="s15"></s>
+        <s id="s16"></s>
+        <div class="slider">
+            <% if(typeof img === 'object'){ %>
             <% img.forEach(pic => { %>
-            <div class="module">
-                <!-- <a href="<%= pic.img_url %>" target="_blank"> -->
-                <img src="<%= (pic.img_url) %>" ondblclick= 'window.open("<%= pic.img_url %>?cs=srgb&dl=<<%= pic.eventtype%>>.jpg&fm=jpg")'>
-                <!-- </a> -->
+            <div>
+                <h2><img src="<%= (pic.img_url) %>" ondblclick= 'window.open("<%= pic.img_url %>?cs=srgb&dl=<<%= pic.eventtype%>>.jpg&fm=jpg")'></h2>
             </div>
-        <% }); %>
-
-
-<%} %>
-    </section>
-
+            <% }); %>
+        <%} %>
+        </div>
+        <div class="prevNext">
+          <div><a href="#s16">PREV</a><a href="#s2">NEXT</a></div>
+          <div><a href="#s1">PREV</a><a href="#s3">NEXT</a></div>
+          <div><a href="#s2">PREV</a><a href="#s4">NEXT</a></div>
+          <div><a href="#s3">PREV</a><a href="#s5">NEXT</a></div>
+          <div><a href="#s4">PREV</a><a href="#s6">NEXT</a></div>
+          <div><a href="#s5">PREV</a><a href="#s7">NEXT</a></div>
+          <div><a href="#s6">PREV</a><a href="#s8">NEXT</a></div>
+          <div><a href="#s7">PREV</a><a href="#s9">NEXT</a></div>
+          <div><a href="#s8">PREV</a><a href="#s10">NEXT</a></div>
+          <div><a href="#s9">PREV</a><a href="#s11">NEXT</a></div>
+          <div><a href="#s10">PREV</a><a href="#s12">NEXT</a></div>
+          <div><a href="#s11">PREV</a><a href="#s13">NEXT</a></div>
+          <div><a href="#s12">PREV</a><a href="#s14">NEXT</a></div>
+          <div><a href="#s13">PREV</a><a href="#s15">NEXT</a></div>
+          <div><a href="#s14">PREV</a><a href="#s16">NEXT</a></div>
+          <div><a href="#s15">PREV</a><a href="#s1">NEXT</a></div>
+        </div>
+        <div class="bullets">
+          <a href="#s1">1</a>
+          <a href="#s2">2</a>
+          <a href="#s3">3</a>
+          <a href="#s4">4</a>
+          <a href="#s5">5</a>
+          <a href="#s6">6</a>
+          <a href="#s7">7</a>
+          <a href="#s8">8</a>
+          <a href="#s9">9</a>
+          <a href="#s10">10</a>
+          <a href="#s11">11</a>
+          <a href="#s12">12</a>
+          <a href="#s13">13</a>
+          <a href="#s14">14</a>
+          <a href="#s15">15</a>
+          <a href="#s16">16</a>
+        </div>
+      </div>
+      <script src="/dropbox.js"></script>
+      <div class="pagebreak"></div>
+      <%- include('../../partials/footer') %>
 </body>
 </html>

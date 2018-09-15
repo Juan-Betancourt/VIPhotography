@@ -1,48 +1,48 @@
-* {
+/* * {
     margin:0;
     padding:0;
-  }
+  } */
 
-  #slider {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
+#slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
-  .slide {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: slideAnimation 20s infinite 0s;
-    overflow: hidden;
-  }
-  .slide:nth-child(2) {
-    animation-delay: 8s;
-  }
-  .slide:last-child {
-    animation-delay: 8s;
-  }
-  .imgAnimation {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg') no-repeat center center;
-    animation: imgAnimation 14s infinite 0s;
-  }
-  .slide:nth-child(2) .imgAnimation {
+.slide {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slideAnimation 20s infinite 0s;
+  overflow: hidden;
+}
+.slide:nth-child(2) {
+  animation-delay: 8s;
+}
+.slide:last-child {
+  animation-delay: 8s;
+}
+.imgAnimation {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg') no-repeat center center;
+  animation: imgAnimation 20s infinite 0s;
+}
+  /* .slide:nth-child(2) .imgAnimation {
     background-image: url('https://images.pexels.com/photos/219776/pexels-photo-219776.jpeg');
     animation: imgAnimation2 14s infinite 8s;
-  }
+  } */
   .slide:last-child .imgAnimation {
     background-image: url('https://wonderfulengineering.com/wp-content/uploads/2014/07/HD-landscape-pictures.png');
-    animation: imgAnimation2 14s infinite 8s;
+    animation: imgAnimation2 20s infinite 8s;
   }
   .imgAnimation::after {
     content:'';
@@ -70,7 +70,7 @@
     color: #fff;
     font-weight: 900;
     text-shadow: 0 0 5px rgb(0, 0, 0.7);
-    font-size: 120px;
+    font-size: 60px;
     text-transform: uppercase;
     padding: 0;
   }
@@ -136,7 +136,7 @@
       transform: translate(-50%, -50%) scale(1.1);
     }
   }
-  @keyframes imgAnimation3 {
+  /* @keyframes imgAnimation3 {
     0% {
       transform: translate(-50%,-50%) scale(1);
     }
@@ -146,10 +146,7 @@
   100% {
     transform: translate(-55%, -45%) scale(1.1);
     }
-  }
-.indexh1{
-    font-size:60px;
-}
+  } */
 .header{
     width:100%;
     height: 32px;
@@ -157,6 +154,7 @@
     z-index: 100;
     position: absolute;
 }
-h2{
-    color:white;
+#logo{
+  width: 90%;
+  height: 90%;
 }
