@@ -28,6 +28,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 200px;
+    width: 260px;
+    border-radius: 15px;
  }
 
  .line-break-creator {
